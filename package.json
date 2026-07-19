@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --emptyOutDir false",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,6 +21,6 @@
     "vite": "^5.1.4"
   },
   "engines": {
-    "node": "24.x"
+    "node": "22.x"
   }
 }
