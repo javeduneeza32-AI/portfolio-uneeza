@@ -1,10 +1,11 @@
 {
   "name": "portfolio",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --emptyOutDir false",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -18,5 +19,8 @@
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.1.4"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
