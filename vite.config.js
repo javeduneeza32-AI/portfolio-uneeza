@@ -3,7 +3,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/',
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -11,20 +14,6 @@ export default defineConfig({
           supabase: ['@supabase/supabase-js'],
         }
       }
-    },
-    chunkSizeWarningLimit: 1000,
-    sourcemap: false,
-    minify: 'esbuild',
-    target: 'es2015',
-    // Reduce memory usage
-    assetsInlineLimit: 0,
-    cssCodeSplit: true,
-  },
-  server: {
-    port: 5173,
-  },
-  // Optimize dependencies
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', '@supabase/supabase-js'],
-  },
+    }
+  }
 })
